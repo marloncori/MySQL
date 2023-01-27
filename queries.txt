@@ -1,0 +1,224 @@
+--create database booktstore
+DROP SCHEMA IF EXISTS `book-store-dev`;
+CREATE SCHEMA `book-store-dev`;
+
+--seletect the database --
+USE `book-store-dev`;
+
+-- create category table --
+CREATE TABLE IF NOT EXISTS `book-store-dev`.`tbl_category` (
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `category_name` VARCHAR(255) NULL DEFAULT NULL);
+
+-- create book table tbl_book --
+CREATE TABLE IF NOT EXISTS `book-store-dev`.`tbl_book` (
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `sku` VARCHAR(255) DEFAULT NULL,
+    `name` VARCHAR(255) DEFAULT NULL,
+    `description` VARCHAR(255) DEFAULT NULL,
+    `unit_price` DECIMAL(13,2) DEFAULT NULL,
+    `image_url` VARCHAR(255) DEFAULT NULL,
+    `active` BIT DEFAULT 1,
+    `units_in_stock` INT(11) DEFAULT NULL,
+    `data_created` DATETIME DEFAULT NULL,
+    `last_updated` DATETIME DEFAUTL NULL,
+    `category_id` BIGINT(20) NOT NULL,
+    FOREIGN KEY (`category_id`) REFERENCES `tbl_category` (`id`)	
+);
+
+-- insert sample data to category table --
+INSERT INTO tbl_category(category_name) VALUES('Textbooks');
+INSERT INTO tbl_category(category_name) VALUES('Fantasy');
+
+-- insert sample data to book table --
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-100',
+   'C Programming Language',
+   'Learn C Programming Language',
+   'C:\Users\NUC\Desktop\java_codes\img-100.jfif',
+   1,
+   100,
+   35.00,
+   2022-03-02 00:11:02,
+   2022-03-02 00:11:02,
+   1
+);
+
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-101',
+   'C# Crash Course',
+   'Learn C# Programming Language',
+   'C:\Users\NUC\Desktop\java_codes\img-101.jfif',
+   1,
+   85,
+   45.00,
+   2022-03-02 00:14:02,
+   2022-03-02 00:14:02,
+   1
+);
+
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-102',
+   'The Modern C++ Challenge',
+   'Learn C++ Programming Language',
+   'C:\Users\NUC\Desktop\java_codes\img-102.jfif',
+   1,
+   90,
+   52.00,
+   2022-03-02 00:15:02,
+   2022-03-02 00:15:02,
+   1
+);
+
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-103',
+   'Mastering ROS for Robotics Programming',
+   'Learn to program robots with ROS Melodic',
+   'C:\Users\NUC\Desktop\java_codes\img-103.jfif',
+   1,
+   110,
+   69.00,
+   2022-03-02 00:23:02,
+   2022-03-02 00:23:02,
+   1
+);
+
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-104',
+   'Reactive Programming with RxJava',
+   'Learn reactive programming in Java',
+   'C:\Users\NUC\Desktop\java_codes\img-104.jfif',
+   1,
+   120,
+   78.00,
+   2022-03-02 00:26:02,
+   2022-03-02 00:26:02,
+   1
+);
+
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-105',
+   'Programming Rust',
+   'Learn Rust programming language',
+   'C:\Users\NUC\Desktop\java_codes\img-105.jfif',
+   1,
+   100,
+   48.00,
+   2022-03-02 00:27:02,
+   2022-03-02 00:27:02,
+   1
+);
+
+INSERT INTO tbl_book (
+
+  sku,
+  name,
+  description,
+  image_url,
+  active,
+  units_in_stock,
+  unit_price,
+  category_id,
+  date_created
+
+)
+VALUES (
+
+   'book-106',
+   'Building RESTful Web Services with Go',
+   'Learn to code rest apps with Golang',
+   'C:\Users\NUC\Desktop\java_codes\img-106.jfif',
+   1,
+   70,
+   93.00,
+   2022-03-02 00:30:02,
+   2022-03-02 00:30:02,
+   1
+);
+
+
+	

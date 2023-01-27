@@ -1,0 +1,31 @@
+USE company;
+
+CREATE TABLE Department(DepartmentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY, DepartmentName VARCHAR(500));
+
+INSERT INTO Department(DepartmentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY, DepartmentName VARCHAR(500)) VALUES('IT');
+INSERT INTO Department(DepartmentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY, DepartmentName VARCHAR(500)) VALUES('SUPPORT');
+INSERT INTO Department(DepartmentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY, DepartmentName VARCHAR(500)) VALUES('SALES');
+INSERT INTO Department(DepartmentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY, DepartmentName VARCHAR(500)) VALUES('PURCHASE');
+INSERT INTO Department(DepartmentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY, DepartmentName VARCHAR(500)) VALUES('HR');
+
+CREATE TABLE Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500))
+
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Marlon Couto Ribeiro', 'IT', '2020-06-01', 'marlon.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Geysa Couto von Krieger', 'PURCHASE', '2022-04-28', 'geysa.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Maria Laura Couto', 'SALES', '2021-09-04', 'laura.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Lazaro de Jesus', 'SUPPORT', '2016-12-13', 'lazaro.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Eliene Medrado', 'HR', '2017-11-09', 'laura.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Aniko Couto-Szalay', 'HR', '2019-03-21', 'aniko.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Beniamin Couto-Szalay', 'SUPPORT', '2021-09-41', 'beniamin.png');
+INSERT INTO Employee(EmployeeId INT IDENTITY(1,1), EmployeeName VARCHAR(500), Department VARCHAR(500), DateOfJoining DATE, PhotoFileName VARCHAR(500)) VALUES('Konrad Jerzak vel Dobosz', 'IT', '2018-04-15', 'konrad.png');
+
+SELECT * FROM company;
+SELECT * FROM company WHERE DepartmentName='IT';
+SELECT * FROM company WHERE DepartmentName='HR';
+SELECT * FROM company WHERE DepartmentName='SUPPORT';
+SELECT * FROM company WHERE DepartmentName='SALES';
+SELECT * FROM company WHERE EmployeeName='Marlon Couto';
+SELECT * FROM company WHERE PhotoFileName='laura.png';
+
+
+
